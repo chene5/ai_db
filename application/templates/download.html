@@ -1,0 +1,70 @@
+{% extends "layout-simple.html" %}
+
+{% block headscripts %}{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div align="center">
+      <h1>{{ title }}</h1>
+    </div>
+  </div>
+
+  {% if not message %}
+  <div class="hidden">
+  {% endif %}
+  <br />
+
+  <div class="row">
+    <div class="col-lg-6 col-sm-6 col-12">
+	    <div class="crawl">
+  	    <p>{{ message }}</p>
+    	</div>
+    </div>
+  </div>
+
+  <br />
+  {% if not message %}
+  </div>
+  {% endif %}
+
+  {% if not output %}
+  <div class="hidden">
+  {% endif %}
+  <div class="row">
+    <div class="col-lg-6 col-sm-6 col-12 col-sm-offset-3">
+    <table class="table table-bordered" width="100%">
+      {% for row in output %}
+        <tr>
+          {% for word in row %}
+            {% if loop.first %}
+              <th><a href="{{ url_for('download') }}?dataset={{ word }}">{{ word }}</a></th>
+            {% else %}
+              <td>{{ word }}</td>
+            {% endif %}
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </table>
+    </div>
+  </div>
+  {% if not output %}
+  </div>
+  {% endif %}
+
+</div>
+
+  <hr>
+  <br />
+
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3" align=center>
+      <form action="/">
+        <button class="btn btn-lg btn-default" type="submit">Upload data</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block endscripts %}{% endblock %}
