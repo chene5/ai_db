@@ -2,6 +2,9 @@
 """config.py
 Configurations for the Data Collector Flask app.
 
+The database can be set up to use the AWS RDS service
+or a local sqlite database file.
+
 
 @author: Eric
 """

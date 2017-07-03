@@ -1,8 +1,11 @@
 ﻿# -*- coding: utf-8 -*-
 """models.py
 Models for the flask application.
+
 This is the index of the tables in the database.
 
+
+@author: Eric
 """
 from application import db
 TABLE_INDEX_NAME = 'tableIndex'
@@ -11,7 +14,7 @@ TABLE_INDEX_NAME = 'tableIndex'
 class TableIndex(db.Model):
     """This is the class that SQLAlchemy will use to create the table."""
     __tablename__ = TABLE_INDEX_NAME
-    table_id = db.Column(db.Integer)
+    table_id = db.Column(db.Integer, autoincrement=True)
     table_name = db.Column(db.Text, primary_key=True)
     filename = db.Column(db.Text)
 
