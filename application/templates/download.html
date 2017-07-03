@@ -10,23 +10,7 @@
     </div>
   </div>
 
-  {% if not message %}
-  <div class="hidden">
-  {% endif %}
   <br />
-
-  <div class="row">
-    <div class="col-lg-6 col-sm-6 col-12">
-	    <div class="crawl">
-  	    <p>{{ message }}</p>
-    	</div>
-    </div>
-  </div>
-
-  <br />
-  {% if not message %}
-  </div>
-  {% endif %}
 
   {% if not output %}
   <div class="hidden">
@@ -34,6 +18,13 @@
   <div class="row">
     <div class="col-lg-6 col-sm-6 col-12 col-sm-offset-3">
     <table class="table table-bordered" width="100%">
+    	<thead>
+      	<tr>
+    	    {% for hword in header %}
+            <th>{{ hword }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
       {% for row in output %}
         <tr>
           {% for word in row %}
@@ -53,6 +44,23 @@
   {% endif %}
 
 </div>
+
+  {% if not message %}
+  <div class="hidden">
+  {% endif %}
+
+  <div class="row">
+    <div class="col-lg-6 col-sm-6 col-12">
+	    <div class="crawl">
+  	    <p>{{ message }}</p>
+    	</div>
+    </div>
+  </div>
+
+  <br />
+  {% if not message %}
+  </div>
+  {% endif %}
 
   <hr>
   <br />
