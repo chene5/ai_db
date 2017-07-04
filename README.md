@@ -14,6 +14,7 @@ The application creates a new table in the database for each uniquely named CSV 
 1. The first column of data is automatically designated the primary key for the table, with the assumption that it is something like an identifier.
 1. If another CSV file with the same name is uploaded, the application will attempt to INSERT any unique rows to the corresponding table. If not all rows are unique, it will report "partial success." 
 1. All columns are VARCHAR columns by default. This can be changed with an ALTER TABLE command, if desired.
+1. To prevent SQL injection attacks, INSERTs use parameter binding. A side effect of this is that if the data in a cell looks like an injection attack (e.g., has quotes), the SQLAlchemy engine will automatically escape the data, adding extra quotes. To avoid the extra escaping, this behavior can be changed if you totally trust all the data.
 
 There are two pages: 
 * Upload: Where you can upload CSV files. This is also the home page.
