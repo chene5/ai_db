@@ -4,7 +4,7 @@
 With this web application, you can upload a CSV file to a SQL database and download the data back to a CSV file. The application is written in Python and built on the Flask web framework. The web pages are styled with Bootstrap CSS. The database interface uses the SQLAlchemy package and can use any database implementation that SQLAlchemy supports. Currently the application is set up to use a sqlite database in the local file system.
 
 Note: the application is ready to deploy to the Amazon Web Services (AWS) Relational Database Service (RDS): 
-1. In `config.py`, fill in the AWS RDS database information and uncomment the designated code. 
+1. In `config.py`, fill in the AWS RDS database information, uncomment the designated code, and comment or remove the old database code. 
 1. Execute `db_create.py` to initialize the database.
 
 This application creates a new table in the database for each uniquely named CSV file. This allows analysts to access and manipulate the dataset in its own table via SQL should they so wish. The only limits to the number of rows and number of columns are those of the database implementation. Some constraints of the automatic table creation:
