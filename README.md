@@ -7,7 +7,7 @@ Note: the application is ready to deploy to the Amazon Web Services (AWS) Relati
 1. In `config.py`, fill in the AWS RDS database information and uncomment the designated code. 
 1. Execute `db_create.py` to initialize the database.
 
-The application creates a new table in the database for each uniquely named CSV file. This allows analysts to access and manipulate the dataset in its own table via SQL should they so wish. The only limits to the number of rows and number of columns are those of the database implementation. Some constraints of the automatic table creation:
+This application creates a new table in the database for each uniquely named CSV file. This allows analysts to access and manipulate the dataset in its own table via SQL should they so wish. The only limits to the number of rows and number of columns are those of the database implementation. Some constraints of the automatic table creation:
 1. The table name is the filename, without the .csv extension.
 1. The table name and column names are reformatted to conform to SQL requirements.
 1. The column names must be valid for a table (e.g., there can't be duplicate column names).
@@ -22,7 +22,7 @@ There are two pages:
 
 ## How to run this application
 1. Download or clone this repository.
-1. In the repository directory, to make sure the requirements are met, run: `pip install -r requirements.txt` Alternatively, if you don't want to change the versions you have in your installation, you can create your own environment (e.g., with virtualenv), or just go through requirements.txt and make sure each package is installed: `pip install Flask` `pip install Flask-SQLAlchemy` `pip install pymysql`
+1. In the repository directory, to make sure the requirements are met, run: `pip install -r requirements.txt` Alternatively, if you don't want to change the versions you have in your Python installation, you can create your own environment (e.g., with virtualenv), or just go through requirements.txt and make sure each package is installed: `pip install SQLAlchemy` `pip install Flask` `pip install Flask-SQLAlchemy` `pip install pymysql`
 1. Run `python application.py` to start the Flask web server.
 1. Point your browser to `http://localhost:5555`
 
