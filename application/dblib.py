@@ -20,6 +20,8 @@ TABLE_EXCLUDES = ['migrate_version', 'tableIndex']
 # These are error messages.
 TABLE_EXISTS_MESSAGE = 'This dataset already exists'
 ID_EXISTS_MESSAGE = 'UNIQUE constraint failed'
+DUPLICATE_COLUMN_MESSAGE = 'Duplicate column name error'
+DUPLICATE_COLUMN_ERROR = 'duplicate column name'
 
 
 def create_db_table(table_name, col_names):
@@ -50,6 +52,9 @@ def create_db_table(table_name, col_names):
         if 'already exists' in str(e):
             print "already exists"
             return TABLE_EXISTS_MESSAGE
+        elif DUPLICATE_COLUMN_ERROR in str(e):
+            print DUPLICATE_COLUMN_MESSAGE
+            return DUPLICATE_COLUMN_MESSAGE
         else:
             return 'Operational Error occurred'
     except ValueError as e:
