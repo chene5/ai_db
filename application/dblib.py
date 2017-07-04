@@ -11,7 +11,7 @@ create tables, and insert new data into tables.
 """
 import sqlalchemy
 from config import SQLALCHEMY_DATABASE_URI
-from models import TABLE_INDEX_NAME, TableIndex
+from models import TableIndex
 from application import db
 
 # These are utility tables in the DB and shouldn't be displayed.
