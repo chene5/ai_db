@@ -109,6 +109,24 @@ input[readonly] {
 
   </div>
 
+  <br />
+  <br />
+
+  <div class="row">
+    <div class="col-sm-6 col-sm-6 col-12">
+    	<h3>Details about uploading data:</h3>
+    	<ul>
+    	  <li>The table name will be the filename, without the .csv extension.</li>
+    	  <li>The table name and column names will be reformatted to conform to SQL requirements (e.g., spaces and punctuation except _ will be removed).</li>
+    	  <li>The column names must be valid for a table (e.g., there can't be duplicate column names).</li>
+    	  <li>The first column of data will automatically be designated the primary key for the table, with the assumption that it is something like an identifier.</li>
+    	  <li>If another CSV file with the same name is uploaded, the application will attempt to INSERT any unique rows to the corresponding table. If not all rows are unique, it will report "partial success."</li>
+    	  <li>All columns are VARCHAR columns by default. This can be changed (manually) with an ALTER TABLE command, if desired.</li>
+    	  <li>To prevent SQL injection attacks, if the data in a cell looks like an injection attack (e.g., has quotes), the upload engine will automatically escape the data, adding extra quotes.</li>
+    	</ul>
+    </div>
+  </div>
+
   <hr>
   <br />
 
