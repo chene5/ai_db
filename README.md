@@ -26,7 +26,7 @@ There are two web pages:
 ## How to run this application locally
 1. Download or clone this repository.
 1. In the repository directory, to make sure the requirements are met, run: `pip install -r requirements.txt` Alternatively, if you don't want to change the versions you have in your Python installation, you can create your own environment (e.g., with virtualenv), or just go through requirements.txt and make sure each package is installed: `pip install SQLAlchemy` `pip install Flask` `pip install Flask-SQLAlchemy` `pip install pymysql`
-1. Run `python application.py` to start the Flask web server.
+1. Run `python application.py` in the repository directory to start the Flask web server.
 1. Point your browser to `http://localhost:5555`
 
 ## About the modules
